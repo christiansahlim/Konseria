@@ -11,7 +11,7 @@ import androidx.compose.ui.unit.dp
 fun SectionText(title : String, modifier: Modifier = Modifier) {
     Text(
         text = title,
-        style = MaterialTheme.typography.h2,
+        style = MaterialTheme.typography.h4,
         modifier = modifier
             .padding(horizontal = 16.dp, vertical = 8.dp)
     )

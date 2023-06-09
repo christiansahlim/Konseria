@@ -1,29 +1,27 @@
 package com.capstoneBangkit.konseria.ui.components.home
 
-import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.lazy.LazyRow
+import androidx.compose.foundation.lazy.items
 import androidx.compose.material.MaterialTheme
-import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
-import com.capstoneBangkit.konseria.R
+import com.capstoneBangkit.konseria.model.dummyCategory
 
 @Composable
-fun ForYouRow() {
-    Column {
-        Text(
-            text = stringResource(R.string.for_you_title),
-            style = MaterialTheme.typography.h2,
-            modifier = Modifier
-        )
+fun ForYouRow(modifier: Modifier) {
+    LazyRow {
+        items(dummyCategory, key = { it.genre }) { category ->
+            ForYouItem(category, modifier)
+        }
     }
+
 }
 
 @Preview(showBackground = true, showSystemUi = true)
 @Composable
 fun ForYouPreview() {
     MaterialTheme {
-        ForYouRow()
+        ForYouRow(Modifier)
     }
 }
