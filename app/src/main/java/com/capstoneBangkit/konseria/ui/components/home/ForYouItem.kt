@@ -26,6 +26,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.capstoneBangkit.konseria.R
@@ -37,7 +38,7 @@ import com.capstoneBangkit.konseria.ui.theme.DarkBlue
 fun ForYouItem(concerts: Concerts, modifier: Modifier) {
     Card(
         modifier = modifier
-            .width(300.dp)
+            .width(325.dp)
             .height(250.dp),
         shape = RoundedCornerShape(16.dp)
     )
@@ -54,7 +55,7 @@ fun ForYouItem(concerts: Concerts, modifier: Modifier) {
         Box(modifier = modifier.background(Brush.verticalGradient(colorStops = colorStops)))
         Box(modifier = modifier.background(Brush.verticalGradient(colorStops = colorStops)))
 
-        Column(verticalArrangement = Arrangement.Bottom, modifier = modifier.padding(10.dp)) {
+        Column(verticalArrangement = Arrangement.Bottom, modifier = modifier.padding(horizontal = 15.dp, vertical = 10.dp)) {
             Text(
                 text = "FRIDAY AUG 24, 9PM",
                 style = MaterialTheme.typography.caption,
@@ -64,12 +65,12 @@ fun ForYouItem(concerts: Concerts, modifier: Modifier) {
             Text(
                 text = "Blues Music Festival",
                 style = MaterialTheme.typography.h5,
+                maxLines = 1,
+                overflow = TextOverflow.Ellipsis,
                 fontWeight = FontWeight.Bold,
                 color = Color.White
             )
-            Row(
-                modifier = Modifier.padding(0.dp, 4.dp, 0.dp, 0.dp),
-            ) {
+            Row{
                 Icon(
                     modifier = Modifier
                         .size(25.dp)

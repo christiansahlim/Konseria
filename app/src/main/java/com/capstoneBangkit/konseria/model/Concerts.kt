@@ -41,5 +41,21 @@ val dummyCategory = listOf(
         0F,
         ConcertType.OFFLINE,
         0,
+    ), Concerts(
+        2,
+        "",
+        "",
+        "",
+        Date(2023, 2, 21),
+        Time(19, 0, 0),
+        "Jazz",
+        "Austin 1814",
+        "Austin 1814 Woodrow Way",
+        R.drawable.blues_poster,
+        0,
+        0F,
+        0F,
+        ConcertType.OFFLINE,
+        0,
     )
 )
