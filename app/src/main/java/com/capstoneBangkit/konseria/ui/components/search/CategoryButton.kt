@@ -14,7 +14,10 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 
 @Composable
-fun CategoryButton() {
+fun CategoryButton(
+    onOfficialButtonClicked: () -> Unit,
+    onTradingButtonClicked: () -> Unit
+) {
     val isOfficialButtonClicked = remember { mutableStateOf(false) }
     val isTradingButtonClicked = remember { mutableStateOf(false) }
 
@@ -26,6 +29,7 @@ fun CategoryButton() {
             onClick = {
                 isOfficialButtonClicked.value = true
                 isTradingButtonClicked.value = false
+                onOfficialButtonClicked()
             },
             modifier = Modifier
                 .padding(start = 32.dp, end = 32.dp)
@@ -54,6 +58,7 @@ fun CategoryButton() {
             onClick = {
                 isOfficialButtonClicked.value = false
                 isTradingButtonClicked.value = true
+                onTradingButtonClicked()
             },
             modifier = Modifier
                 .padding(start = 32.dp, end = 32.dp)
@@ -81,5 +86,9 @@ fun CategoryButton() {
 @Preview
 @Composable
 fun CategoryButtonPreview() {
-    CategoryButton()
+    CategoryButton(
+        onOfficialButtonClicked = {},
+        onTradingButtonClicked = {}
+    )
 }
+

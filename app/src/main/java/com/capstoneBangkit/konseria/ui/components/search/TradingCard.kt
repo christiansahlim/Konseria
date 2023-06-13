@@ -10,6 +10,7 @@ import androidx.compose.material.Text
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.AirplaneTicket
 import androidx.compose.material.icons.filled.MusicNote
+import androidx.compose.material.icons.filled.Person
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -23,7 +24,7 @@ import androidx.compose.ui.unit.dp
 import com.capstoneBangkit.konseria.R
 
 @Composable
-fun OfficialCard(modifier: Modifier) {
+fun TradingCard(modifier: Modifier) {
     Card(
         modifier = Modifier
             .fillMaxWidth()
@@ -91,6 +92,26 @@ fun OfficialCard(modifier: Modifier) {
                             color = Color.LightGray
                         )
                     }
+                    Row(verticalAlignment = Alignment.CenterVertically) {
+                        Icon(
+                            modifier = Modifier
+                                .size(25.dp)
+                                .padding(0.dp, 0.dp, 5.dp, 0.dp)
+                                .alpha(0.7f),
+                            imageVector = Icons.Default.Person,
+                            tint = Color.LightGray,
+                            contentDescription = null
+                        )
+                        Text(
+                            text = "Steve",
+                            modifier = Modifier
+                                .padding(0.dp, 4.dp, 0.dp, 0.dp)
+                                .alpha(0.7f),
+                            style = MaterialTheme.typography.caption,
+                            fontWeight = FontWeight.Bold,
+                            color = Color.LightGray
+                        )
+                    }
                 }
             }
         }
@@ -99,6 +120,6 @@ fun OfficialCard(modifier: Modifier) {
 
 @Preview
 @Composable
-fun PreviewOfficialCard() {
-    OfficialCard(Modifier)
+fun PreviewTradingCard() {
+    TradingCard(Modifier)
 }

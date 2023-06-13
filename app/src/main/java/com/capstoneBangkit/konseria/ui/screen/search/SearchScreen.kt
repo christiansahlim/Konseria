@@ -6,15 +6,21 @@ import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.MaterialTheme
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.capstoneBangkit.konseria.ui.components.search.CategoryButton
-import com.capstoneBangkit.konseria.ui.components.search.SearchBar
-import com.capstoneBangkit.konseria.ui.components.search.SearchSection
+import com.capstoneBangkit.konseria.ui.components.search.OfficialCard
+import com.capstoneBangkit.konseria.ui.components.search.TradingCard
+import com.capstoneBangkit.konseria.ui.components.search.*
+
 
 @Composable
 fun SearchScreen(modifier: Modifier) {
+    val isOfficialCardVisible = remember { mutableStateOf(true) }
+    val isTradingCardVisible = remember { mutableStateOf(false) }
+
     Column(
         modifier = modifier
             .verticalScroll(rememberScrollState())
@@ -27,16 +33,30 @@ fun SearchScreen(modifier: Modifier) {
         )
         SearchSection(
             content = {
-                CategoryButton()
+                CategoryButton(
+                    onOfficialButtonClicked = {
+                        isOfficialCardVisible.value = true
+                        isTradingCardVisible.value = false
+                    },
+                    onTradingButtonClicked = {
+                        isOfficialCardVisible.value = false
+                        isTradingCardVisible.value = true
+                    }
+                )
             }
         )
-//        SearchSection(
-//            content = {
-//                BottomNavBar()
-//            }
-//        )
+        SearchSection(
+            content = {
+                if (isOfficialCardVisible.value) {
+                    OfficialCard(Modifier)
+                } else if (isTradingCardVisible.value) {
+                    TradingCard(Modifier)
+                }
+            }
+        )
     }
 }
+
 
 @Preview(showBackground = true, showSystemUi = true)
 @Composable
