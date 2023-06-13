@@ -8,4 +8,9 @@
     <string name="search_screen_title">Search</string>
     <string name="inventory_screen_title">Inventory</string>
     <string name="profile_screen_title">Profile</string>
+    <string name="setting_title">Settings</string>
+    <string name="manage_account_title">Manage My Account</string>
+    <string name="privacy_safety_title">Privacy and Security</string>
+    <string name="help_center_title">Help Center</string>
+    <string name="theme_title">Theme</string>
 </resources>
