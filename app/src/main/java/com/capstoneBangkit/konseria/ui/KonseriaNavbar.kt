@@ -66,7 +66,7 @@ fun KonseriaNavbar(
                 InventoryScreen()
             }
             composable(KonseriaNavigation.ProfileScreen.route) {
-                ProfileScreen()
+                ProfileScreen(navController = navController, modifier = Modifier)
             }
             composable(
                 route = KonseriaNavigation.HomeDetailScreen.route,
