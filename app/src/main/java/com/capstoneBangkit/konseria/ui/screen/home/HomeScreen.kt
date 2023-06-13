@@ -18,7 +18,10 @@ import com.capstoneBangkit.konseria.ui.components.home.HomeSection
 import com.capstoneBangkit.konseria.ui.components.home.UpcomingColumn
 
 @Composable
-fun HomeScreen(modifier: Modifier) {
+fun HomeScreen(
+    modifier: Modifier = Modifier,
+    navigateToDetail: (Int) -> Unit
+) {
     Column(
         modifier = modifier
             .verticalScroll(rememberScrollState())
@@ -55,6 +58,6 @@ fun HomeScreen(modifier: Modifier) {
 @Composable
 fun PreviewHomeScreen() {
     MaterialTheme {
-        HomeScreen(Modifier)
+//        HomeScreen(Modifier)
     }
 }

@@ -3,7 +3,7 @@ package com.capstoneBangkit.konseria
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import com.capstoneBangkit.konseria.navigation.NavigationBuilder
+import com.capstoneBangkit.konseria.ui.KonseriaNavbar
 import com.capstoneBangkit.konseria.ui.theme.KonseriaTheme
 
 class KonseriaApp : ComponentActivity() {
@@ -11,7 +11,7 @@ class KonseriaApp : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             KonseriaTheme {
-                NavigationBuilder()
+                KonseriaNavbar()
             }
         }
     }

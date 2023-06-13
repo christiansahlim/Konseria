@@ -16,7 +16,7 @@ import com.capstoneBangkit.konseria.ui.components.search.TradingCard
 import com.capstoneBangkit.konseria.ui.components.search.*
 
 @Composable
-fun SearchScreen(modifier: Modifier) {
+fun SearchScreen(modifier: Modifier = Modifier, navigateToDetail: (Int) -> Unit) {
     val isOfficialCardVisible = remember { mutableStateOf(true) }
     val isTradingCardVisible = remember { mutableStateOf(false) }
 
@@ -61,6 +61,6 @@ fun SearchScreen(modifier: Modifier) {
 @Composable
 fun PreviewSearchScreen() {
     MaterialTheme {
-        SearchScreen(Modifier)
+        SearchScreen(Modifier, navigateToDetail = {} )
     }
 }
