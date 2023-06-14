@@ -12,6 +12,7 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
+import com.capstoneBangkit.konseria.model.TicketsType
 import com.capstoneBangkit.konseria.navigation.KonseriaNavigation
 import com.capstoneBangkit.konseria.ui.components.BottomNavBar
 import com.capstoneBangkit.konseria.ui.screen.detail.DetailScreen
@@ -75,6 +76,8 @@ fun KonseriaNavbar(
                 val id = it.arguments?.getInt("concertId") ?: -1
                 DetailScreen(
                     concertId = id,
+                    //Perlu diubah
+                    ticketType = TicketsType.OFFICIAL,
                     navigateBack = {
                         navController.navigateUp()
                     }
@@ -87,6 +90,8 @@ fun KonseriaNavbar(
                 val id = it.arguments?.getInt("concertId") ?: -1
                 DetailScreen(
                     concertId = id,
+                    //Perlu diubah
+                    ticketType = TicketsType.OFFICIAL,
                     navigateBack = {
                         navController.navigateUp()
                     }
