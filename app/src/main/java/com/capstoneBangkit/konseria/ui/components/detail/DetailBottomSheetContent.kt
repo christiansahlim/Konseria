@@ -2,6 +2,8 @@ package com.capstoneBangkit.konseria.ui.components.detail
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
@@ -18,7 +20,10 @@ import com.google.android.gms.maps.model.LatLng
 
 @Composable
 fun DetailBottomSheetContent(modifier: Modifier) {
-    Column(Modifier.padding(start = 20.dp)) {
+    Column(
+        Modifier
+            .padding(start = 20.dp)
+            .verticalScroll(rememberScrollState())) {
         HomeSection(title = stringResource(R.string.details_title),
             content = {
                 DescText(

@@ -50,7 +50,7 @@ fun HomeScreen(
             HomeSection(
                 title = stringResource(R.string.for_you_title),
                 content = {
-                    ForYouRow(modifier)
+                    ForYouRow(modifier, navigateToDetail)
                 }
             )
             HomeSection(
