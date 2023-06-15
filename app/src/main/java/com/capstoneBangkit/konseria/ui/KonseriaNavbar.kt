@@ -46,9 +46,7 @@ fun KonseriaNavbar(
                 HomeScreen(
                     navigateToDetail = { concertId ->
                         navController.navigate(
-                            KonseriaNavigation.HomeDetailScreen.createRoute(
-                                concertId
-                            )
+                            KonseriaNavigation.HomeDetailScreen.createRoute(concertId)
                         )
                     }
                 )
@@ -57,9 +55,7 @@ fun KonseriaNavbar(
                 SearchScreen(
                     navigateToDetail = { concertId ->
                         navController.navigate(
-                            KonseriaNavigation.SearchDetailScreen.createRoute(
-                                concertId
-                            )
+                            KonseriaNavigation.SearchDetailScreen.createRoute(concertId)
                         )
                     })
             }

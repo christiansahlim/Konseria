@@ -1,5 +1,6 @@
 package com.capstoneBangkit.konseria.ui.components.home
 
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.lazy.items
@@ -11,12 +12,16 @@ import androidx.compose.ui.unit.dp
 import com.capstoneBangkit.konseria.model.dummyCategory
 
 @Composable
-fun ForYouRow(modifier: Modifier) {
+fun ForYouRow(modifier: Modifier, navigateToDetail: (Int) -> Unit) {
     LazyRow(
         horizontalArrangement = Arrangement.spacedBy(16.dp)
     ) {
         items(dummyCategory, key = { it.genre }) { category ->
-            ForYouItem(category, modifier)
+            ForYouItem(
+                category,
+                modifier = modifier.clickable {
+                    navigateToDetail(category.concertId)
+                })
         }
     }
 }
@@ -25,6 +30,6 @@ fun ForYouRow(modifier: Modifier) {
 @Composable
 fun ForYouPreview() {
     MaterialTheme {
-        ForYouRow(Modifier)
+        ForYouRow(Modifier) {}
     }
 }
