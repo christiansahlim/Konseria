@@ -15,6 +15,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
@@ -37,10 +38,10 @@ fun OfficialCard(modifier: Modifier) {
         ) {
             Image(
                 painter = painterResource(R.drawable.blues_poster),
+                contentScale = ContentScale.Crop,
                 contentDescription = "Card Image",
                 modifier = Modifier
                     .size(80.dp)
-                    .padding(end = 16.dp)
             )
             Column {
                 Column(verticalArrangement = Arrangement.Bottom, modifier = modifier.padding(horizontal = 15.dp, vertical = 10.dp)) {

@@ -27,8 +27,10 @@ data class Concerts (
 val dummyCategory = listOf(
     Concerts(
         1,
-        "",
-        "",
+        "Blues Clues",
+        "Free directories: directories are perfect for customers that are searching for a particular topic. " +
+                "What’s great about them is that you only have to post once and they are good for long periods of time. " +
+                "It saves a lot of your time when you don’t have to resubmit your information every week…",
         "",
         Date(2023, 2, 21),
         Time(19, 0, 0),

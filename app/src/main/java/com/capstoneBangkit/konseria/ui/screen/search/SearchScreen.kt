@@ -23,11 +23,11 @@ fun SearchScreen(modifier: Modifier = Modifier, navigateToDetail: (Int) -> Unit)
     Column(
         modifier = modifier
             .verticalScroll(rememberScrollState())
-            .padding(horizontal = 16.dp)
+            .padding(horizontal = 16.dp, vertical = 10.dp)
     ) {
         SearchSection(
             content = {
-                SearchBar(onSearch = { /* Handle search query */ })
+                SearchBar(onSearch = { /* Handle search query */ } )
             }
         )
         SearchSection(
@@ -50,7 +50,7 @@ fun SearchScreen(modifier: Modifier = Modifier, navigateToDetail: (Int) -> Unit)
                     OfficialCard(Modifier)
                 } else if (isTradingCardVisible.value) {
                     TradingCard(Modifier)
-                }
+                   }
             }
         )
     }

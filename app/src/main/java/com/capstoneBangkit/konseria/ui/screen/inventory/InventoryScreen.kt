@@ -1,13 +1,17 @@
 package com.capstoneBangkit.konseria.ui.screen.inventory
 
 import androidx.compose.foundation.Image
-import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
-import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
@@ -18,8 +22,12 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
 import com.capstoneBangkit.konseria.R
-import com.capstoneBangkit.konseria.ui.components.BottomNavBar
-import com.capstoneBangkit.konseria.ui.components.inventory.*
+import com.capstoneBangkit.konseria.ui.components.inventory.CategoryInventoryButton
+import com.capstoneBangkit.konseria.ui.components.inventory.CompletedCard
+import com.capstoneBangkit.konseria.ui.components.inventory.InventorySection
+import com.capstoneBangkit.konseria.ui.components.inventory.OngoingCard
+import com.capstoneBangkit.konseria.ui.components.inventory.OnsaleCard
+import com.capstoneBangkit.konseria.ui.components.inventory.PaidCard
 
 @Composable
 fun InventoryScreen(navController: NavHostController, modifier: Modifier) {
@@ -41,11 +49,11 @@ fun InventoryScreen(navController: NavHostController, modifier: Modifier) {
                 content = {
                     Text(
                         text = "Your Tickets",
-                        style = MaterialTheme.typography.h6.copy(
+                        style = MaterialTheme.typography.h4.copy(
                             color = Color.White,
                             fontWeight = FontWeight.Bold
                         ),
-                        modifier = Modifier.padding(bottom = 16.dp)
+                        modifier = Modifier.padding(bottom = 16.dp, top = 20.dp)
                     )
                     CategoryInventoryButton(
                         onOngoingButtonClicked = {
@@ -93,10 +101,6 @@ fun InventoryScreen(navController: NavHostController, modifier: Modifier) {
                 }
             )
         }
-        BottomNavBar(
-            navController = navController,
-            modifier = Modifier.align(Alignment.BottomCenter)
-        )
     }
 }
 

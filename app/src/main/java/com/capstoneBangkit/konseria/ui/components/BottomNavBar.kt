@@ -27,11 +27,7 @@ fun BottomNavBar(
     navController: NavHostController,
     modifier: Modifier = Modifier
 ) {
-    BottomNavigation(
-        backgroundColor = MaterialTheme.colors.primary,
-        contentColor = MaterialTheme.colors.onSecondary,
-        modifier = modifier
-    ) {
+    BottomNavigation {
         val navBackStackEntry by navController.currentBackStackEntryAsState()
         val currentRoute = navBackStackEntry?.destination?.route
 
@@ -59,7 +55,10 @@ fun BottomNavBar(
             )
         )
 
-        BottomNavigation {
+        BottomNavigation(
+            backgroundColor = MaterialTheme.colors.background,
+            modifier = modifier
+        ) {
             navigationItems.map {
                 BottomNavigationItem(
                     icon = {
@@ -73,6 +72,7 @@ fun BottomNavBar(
                     },
 
                     selected = currentRoute == it.screen.route,
+                    selectedContentColor = MaterialTheme.colors.onSecondary,
                     unselectedContentColor = Color.LightGray,
                     onClick = {
                         navController.navigate(it.screen.route) {
