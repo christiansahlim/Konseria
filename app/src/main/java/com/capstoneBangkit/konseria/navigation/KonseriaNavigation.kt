@@ -13,4 +13,11 @@ sealed class KonseriaNavigation(val route: String) {
 
     object InventoryScreen : KonseriaNavigation("inventory_screen")
     object ProfileScreen : KonseriaNavigation("profile_screen")
+
+    //object DetailScreen : KonseriaNavigation("detail_screen")
+
+    //object DetailPaymentScreen : KonseriaNavigation("detail_screen/{concertId}") {
+        //fun createRoute(concertId: Int) = "detail_screen/$concertId"
+    //}
+
 }
