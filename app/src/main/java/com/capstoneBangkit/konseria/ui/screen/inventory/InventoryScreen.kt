@@ -28,6 +28,7 @@ import com.capstoneBangkit.konseria.ui.components.inventory.InventorySection
 import com.capstoneBangkit.konseria.ui.components.inventory.OngoingCard
 import com.capstoneBangkit.konseria.ui.components.inventory.OnsaleCard
 import com.capstoneBangkit.konseria.ui.components.inventory.PaidCard
+import com.capstoneBangkit.konseria.ui.components.inventory.SellTicketPopUp
 
 @Composable
 fun InventoryScreen(navController: NavHostController, modifier: Modifier) {
@@ -92,7 +93,9 @@ fun InventoryScreen(navController: NavHostController, modifier: Modifier) {
                     if (isOngoingCardVisible.value) {
                         OngoingCard(Modifier)
                     } else if (isPaidCardVisible.value) {
-                        PaidCard(modifier = Modifier, sellTicketButtonClicked = {})
+                        PaidCard(modifier = Modifier, sellTicketButtonClicked = {
+                            SellTicketPopUp({})
+                        })
                     } else if (isOnsaleCardVisible.value) {
                         OnsaleCard(Modifier)
                     } else if (isCompletedVisible.value) {
