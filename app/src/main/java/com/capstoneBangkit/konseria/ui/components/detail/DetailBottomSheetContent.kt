@@ -9,6 +9,8 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.capstoneBangkit.konseria.R
+import com.capstoneBangkit.konseria.ui.components.detail.bottom_sheet.DetailConcertOrganizer
+import com.capstoneBangkit.konseria.ui.components.detail.bottom_sheet.DetailOtherConcertsRow
 import com.capstoneBangkit.konseria.ui.components.detail.bottom_sheet.DetailsConcertLocation
 import com.capstoneBangkit.konseria.ui.components.home.HomeSection
 import com.capstoneBangkit.konseria.ui.theme.KonseriaTheme
@@ -16,7 +18,7 @@ import com.google.android.gms.maps.model.LatLng
 
 @Composable
 fun DetailBottomSheetContent(modifier: Modifier) {
-    Column(Modifier.padding(start = 10.dp)) {
+    Column(Modifier.padding(start = 20.dp)) {
         HomeSection(title = stringResource(R.string.details_title),
             content = {
                 DescText(
@@ -28,22 +30,22 @@ fun DetailBottomSheetContent(modifier: Modifier) {
         )
         HomeSection(title = stringResource(R.string.details_location),
             content = {
-                DetailsConcertLocation(LatLng(1.35, 103.87))
+                DetailsConcertLocation(Modifier.padding(end = 20.dp), LatLng(1.35, 103.87))
             }
         )
         HomeSection(title = stringResource(R.string.details_organizers),
             content = {
-
+                DetailConcertOrganizer()
             }
         )
         HomeSection(title = stringResource(R.string.details_also_venue),
             content = {
-
+                DetailOtherConcertsRow()
             }
         )
         HomeSection(title = stringResource(R.string.details_more_this),
             content = {
-
+                DetailOtherConcertsRow()
             }
         )
     }
@@ -51,7 +53,7 @@ fun DetailBottomSheetContent(modifier: Modifier) {
 
 @Composable
 fun DescText(description: String) {
-    Text(text = description)
+    Text(text = description, modifier = Modifier.padding(bottom = 30.dp))
 }
 
 @Preview

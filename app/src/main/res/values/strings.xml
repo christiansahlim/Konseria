@@ -8,4 +8,14 @@
     <string name="search_screen_title">Search</string>
     <string name="inventory_screen_title">Inventory</string>
     <string name="profile_screen_title">Profile</string>
+    <string name="details_title">Details</string>
+    <string name="details_location">Location</string>
+    <string name="details_organizers">Organizers</string>
+    <string name="details_also_venue">Also in this venue</string>
+    <string name="details_more_this">More like this</string>
+    <string name="setting_title">Settings</string>
+    <string name="manage_account_title">Manage Account</string>
+    <string name="privacy_safety_title">Safety</string>
+    <string name="help_center_title">Help Center</string>
+    <string name="theme_title">Theme</string>
 </resources>

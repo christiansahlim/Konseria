@@ -57,7 +57,7 @@ fun DetailScreen(concertId: Int, ticketType: Enum<TicketsType>, navigateBack: ()
             DetailBottomSheetContent(Modifier)
         }
     ) {
-        Box() {
+        Box {
             DetailBanner(ticketType)
             DetailDescription(Modifier.padding(top = setLayoutPadding(ticketType)), ticketType)
         }
