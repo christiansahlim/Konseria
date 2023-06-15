@@ -21,7 +21,7 @@ import androidx.compose.ui.unit.dp
 import com.capstoneBangkit.konseria.R
 
 @Composable
-fun PaidCard(modifier: Modifier, sellTicketButtonClicked: () -> Unit) {
+fun PaidCard(modifier: Modifier, sellTicketButtonClicked: @Composable () -> Unit) {
     Card(
         modifier = modifier
             .fillMaxWidth()
@@ -99,7 +99,7 @@ fun PaidCard(modifier: Modifier, sellTicketButtonClicked: () -> Unit) {
                     verticalAlignment = Alignment.CenterVertically
                 ) {
                     Button(
-                        onClick = sellTicketButtonClicked,
+                        onClick = {sellTicketButtonClicked},
                         modifier = Modifier
                             .height(36.dp)
                             .width(120.dp),
