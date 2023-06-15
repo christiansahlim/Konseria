@@ -17,9 +17,10 @@ import androidx.compose.ui.unit.dp
 import com.capstoneBangkit.konseria.ui.theme.KonseriaTheme
 
 @Composable
-fun ButtonPayment(isChecked: MutableState<Boolean>) {
+fun ButtonPayment(isChecked: MutableState<Boolean>, navigateToDetail: (Int) -> Unit) {
     Button(
-        onClick = { /* Aksi yang dilakukan saat tombol diklik */ },
+        onClick = {
+            navigateToDetail},
         modifier = Modifier
             .fillMaxWidth()
             .padding(16.dp)
@@ -44,7 +45,7 @@ fun ButtonPayment(isChecked: MutableState<Boolean>) {
 fun ButtonPaymentPreview() {
     val isChecked = remember { mutableStateOf(false) }
     KonseriaTheme {
-        ButtonPayment(isChecked = isChecked)
+        ButtonPayment(isChecked = isChecked, navigateToDetail = {})
     }
 }
 

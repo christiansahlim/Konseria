@@ -18,6 +18,7 @@ import com.capstoneBangkit.konseria.ui.components.BottomNavBar
 import com.capstoneBangkit.konseria.ui.screen.detail.DetailScreen
 import com.capstoneBangkit.konseria.ui.screen.home.HomeScreen
 import com.capstoneBangkit.konseria.ui.screen.inventory.InventoryScreen
+import com.capstoneBangkit.konseria.ui.screen.payment.PaymentScreen
 import com.capstoneBangkit.konseria.ui.screen.profile.ProfileScreen
 import com.capstoneBangkit.konseria.ui.screen.search.SearchScreen
 
@@ -55,9 +56,33 @@ fun KonseriaNavbar(
                 SearchScreen(
                     navigateToDetail = { concertId ->
                         navController.navigate(
-                            KonseriaNavigation.SearchDetailScreen.createRoute(concertId)
+                            KonseriaNavigation.PaymentInventoryScreen.createRoute(concertId)
                         )
                     })
+            }
+            composable(KonseriaNavigation.PaymentScreen.route) {
+                PaymentScreen(
+                    navigateToInventory = { concertId ->
+                        navController.navigate(
+                            KonseriaNavigation.HomeDetailScreen.createRoute(concertId)
+                        )
+                    }
+                )
+            }
+            composable(KonseriaNavigation.DetailScreen.route) {
+                DetailScreen(
+                    concertId = id,
+                    //Perlu diubah
+                    ticketType = TicketsType.OFFICIAL,
+                    navigateBack = {
+                        navController.navigateUp()
+                    },
+                    navigateToPayment = {
+                        navController.navigate(
+                            KonseriaNavigation.PaymentScreen.route
+                        )
+                    }
+                )
             }
             composable(KonseriaNavigation.InventoryScreen.route) {
                 InventoryScreen(navController = navController, modifier = Modifier)
@@ -76,6 +101,11 @@ fun KonseriaNavbar(
                     ticketType = TicketsType.OFFICIAL,
                     navigateBack = {
                         navController.navigateUp()
+                    },
+                    navigateToPayment = {
+                        navController.navigate(
+                            KonseriaNavigation.PaymentScreen.route
+                        )
                     }
                 )
             }
@@ -90,6 +120,11 @@ fun KonseriaNavbar(
                     ticketType = TicketsType.OFFICIAL,
                     navigateBack = {
                         navController.navigateUp()
+                    },
+                    navigateToPayment = {
+                        navController.navigate(
+                            KonseriaNavigation.PaymentScreen.route
+                        )
                     }
                 )
             }

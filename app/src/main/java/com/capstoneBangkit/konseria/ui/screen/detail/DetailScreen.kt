@@ -28,7 +28,7 @@ import com.capstoneBangkit.konseria.ui.theme.KonseriaTheme
 
 @OptIn(ExperimentalMaterialApi::class)
 @Composable
-fun DetailScreen(concertId: Int, ticketType: Enum<TicketsType>, navigateBack: () -> Unit) {
+fun DetailScreen(concertId: Int, ticketType: Enum<TicketsType>, navigateBack: () -> Unit, navigateToPayment: (Int) -> Unit) {
     val contextForToast = LocalContext.current.applicationContext
     val coroutineScope = rememberCoroutineScope()
     val scaffoldState = rememberBottomSheetScaffoldState()
@@ -76,6 +76,6 @@ fun setLayoutPadding(ticketType: Enum<TicketsType>): Dp {
 @Composable
 fun DetailScreenPreview() {
     KonseriaTheme {
-        DetailScreen(concertId = 0, ticketType = TicketsType.OFFICIAL, navigateBack = {})
+        DetailScreen(concertId = 0, ticketType = TicketsType.OFFICIAL, navigateBack = {}, navigateToPayment = {})
     }
 }

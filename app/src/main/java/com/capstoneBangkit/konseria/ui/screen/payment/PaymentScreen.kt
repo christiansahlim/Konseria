@@ -14,7 +14,7 @@ import com.capstoneBangkit.konseria.ui.components.payment.*
 import com.capstoneBangkit.konseria.ui.theme.KonseriaTheme
 
 @Composable
-fun PaymentScreen() {
+fun PaymentScreen(navigateToInventory: (Int) -> Unit) {
     val isChecked = remember { mutableStateOf(false) }
 
     Column(
@@ -67,7 +67,7 @@ fun PaymentScreen() {
 
         PaymentSection (
             content = {
-                ButtonPayment(isChecked)
+                ButtonPayment(isChecked, navigateToInventory)
             }
         )
 
@@ -78,6 +78,7 @@ fun PaymentScreen() {
 @Composable
 fun PaymentScreenPreview() {
     KonseriaTheme {
-        PaymentScreen()
+        PaymentScreen(navigateToInventory = {})
     }
 }
+
